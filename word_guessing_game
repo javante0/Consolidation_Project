@@ -19,5 +19,7 @@ p2_wrong_word_guesses = 0
 def word_game():
     guessing_word = random.choice(basketball_players)
     print("Welcome to the Word Guessing Game.\n"
-          f"The length of the word is len{(basketball_players)}\n"
+          f"The length of the word is {len(guessing_word)-1} letters.\n"
           "The category is Basketball Players.\n")
+    
+    
