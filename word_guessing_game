@@ -8,18 +8,34 @@ basketball_players = ["Stephen Curry", "Lebron James", "Kawhi Leonard",
                       "David Robinson", "Kobe Bryant", "Allen Iverson", 
                       "Nikola Jokic", "Jalen Brunson", "Anthony Davis"]
 
-#guess counters
-p1_guesses = 0
-p2_guesses = 0
-
-p1_wrong_word_guesses = 0
-p2_wrong_word_guesses = 0
-
-#Game Intro
 def word_game():
+    #Defining guess variables
+    p1_guesses = 0
+    p2_guesses = 0
+
+    p1_wrong_word_guesses = 0
+    p2_wrong_word_guesses = 0
+    #Game intro
     guessing_word = random.choice(basketball_players)
     print("Welcome to the Word Guessing Game.\n"
           f"The length of the word is {len(guessing_word)-1} letters.\n"
           "The category is Basketball Players.\n")
-    
-    
+    print(guessing_word)
+    word_guess_correct = False
+    while not word_guess_correct:
+        #User input for a letter
+        letter_guess = input("Guess a letter: ")
+        #If user types in more than 1 letter
+        if len(letter_guess) >= 2:
+            print("Please enter a single letter.")
+        #If letter_guess is in the word
+        if letter_guess.casefold() in guessing_word.casefold():
+            p1_guesses += 1
+            print(f"The letter {letter_guess} is in the word "
+                  f"{guessing_word.casefold().count(letter_guess.casefold())} times\n")
+        #If letter_guess is NOT in the word
+        elif letter_guess.casefold() not in guessing_word.casefold():
+            p1_guesses += 1
+            print(f"The letter {letter_guess} is not in the word.\n")
+
+word_game()
