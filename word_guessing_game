@@ -1,0 +1,23 @@
+#word game
+
+import os
+import random
+
+#word bank
+basketball_players = ["Stephen Curry", "Lebron James", "Kawhi Leonard", 
+                      "David Robinson", "Kobe Bryant", "Allen Iverson", 
+                      "Nikola Jokic", "Jalen Brunson", "Anthony Davis"]
+
+#guess counters
+p1_guesses = 0
+p2_guesses = 0
+
+p1_wrong_word_guesses = 0
+p2_wrong_word_guesses = 0
+
+#Game Intro
+def word_game():
+    guessing_word = random.choice(basketball_players)
+    print("Welcome to the Word Guessing Game.\n"
+          f"The length of the word is len{(basketball_players)}\n"
+          "The category is Basketball Players.\n")
