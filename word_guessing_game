@@ -2,6 +2,7 @@
 
 import os
 import random
+import time
 
 #word bank
 basketball_players = ["Stephen Curry", "Lebron James", "Kawhi Leonard", 
@@ -13,6 +14,12 @@ p1_incorrect_letter_guess_list =[]
 
 p2_correct_letter_guess_list = []
 p2_incorrect_letter_guess_list =[]
+
+#Clears guesses' lists
+p1_correct_letter_guess_list.clear()
+p1_incorrect_letter_guess_list.clear()
+p2_correct_letter_guess_list.clear()
+p2_incorrect_letter_guess_list.clear()
 
 def word_game():
     #Defining guess variables
@@ -27,7 +34,7 @@ def word_game():
           "Player 1 will start.\n"
           f"The length of the word is {len(p1_guessing_word)-1} letters.\n"
           "The category is Basketball Players.\n")
-    print(p1_guessing_word)
+    #print(p1_guessing_word)
     p1_round_end = False
     while not p1_round_end:
         #User input for a letter
@@ -47,8 +54,8 @@ def word_game():
             p1_guesses += 1
             p1_incorrect_letter_guess_list.append(letter_guess)
             print(f"The letter {letter_guess} is not in the word.")
-        print(f"The letters {p1_correct_letter_guess_list} are in the word.")
-        print(f"The letters {p1_incorrect_letter_guess_list} are not in the word.")
+        print(f"\n\nThe letters {p1_correct_letter_guess_list} are in the word.")
+        print(f"The letters {p1_incorrect_letter_guess_list} are not in the word.\n\n")
 
         #Word guesses
         word_guess_confirmation = input("P1 - Would you like to guess the word? Enter (y/n): ")
@@ -59,6 +66,7 @@ def word_game():
             #if word correct, removes guessing word from word bank
             if word_guess == f"{p1_guessing_word}":
                 print(f"Good job! The word is {p1_guessing_word}.\n")
+                p1_wrong_word_guesses += 1
                 basketball_players.remove(p1_guessing_word)
                 p1_round_end = True
             #if incorrect, back to beginning of loop
@@ -67,15 +75,18 @@ def word_game():
                 print(f"That is not correct. You have {3-p1_wrong_word_guesses} guesses left.")
         #if word guesses reaches 3, removes guessing word from word bank, on to next loop
         if p1_wrong_word_guesses == 3:
-            print(f"You ran out of guesses. Game Over!\n")
+            print(f"You ran out of guesses. You don't know ball!\n")
             basketball_players.remove(p1_guessing_word)
             p1_round_end = True
-    
+
+
+    #Start of p2's turn
     p2_guessing_word = random.choice(basketball_players)
+    time.sleep(1.5)
     print("Player 2 is next.\n"
           f"The length of the word is {len(p2_guessing_word)-1} letters.\n"
           "The category is Basketball Players.\n")
-    print(p2_guessing_word)
+    #print(p2_guessing_word)
     p2_round_end = False
     while not p2_round_end:
         #User input for a letter
@@ -95,8 +106,8 @@ def word_game():
             p2_guesses += 1
             p2_incorrect_letter_guess_list.append(letter_guess)
             print(f"The letter {letter_guess} is not in the word.")
-        print(f"The letters {p2_correct_letter_guess_list} are in the word.")
-        print(f"The letters {p2_incorrect_letter_guess_list} are not in the word.")
+        print(f"\n\nThe letters {p2_correct_letter_guess_list} are in the word.")
+        print(f"The letters {p2_incorrect_letter_guess_list} are not in the word.\n\n")
 
         #Word guesses
         word_guess_confirmation = input("P2 - Would you like to guess the word? Enter (y/n): ")
@@ -107,6 +118,7 @@ def word_game():
             #if word correct, removes guessing word from word bank
             if word_guess == f"{p2_guessing_word}":
                 print(f"Good job! The word is {p2_guessing_word}.\n")
+                p2_wrong_word_guesses += 1
                 basketball_players.remove(p2_guessing_word)
                 p2_round_end = True
             #if incorrect, back to beginning of loop
@@ -115,23 +127,25 @@ def word_game():
                 print(f"That is not correct. You have {3-p2_wrong_word_guesses} guesses left.")
         #if word guesses reaches 3, removes guessing word from word bank, on to next loop
         if p2_wrong_word_guesses == 3:
-            print(f"You ran out of guesses. Game Over!\n")
+            print(f"You ran out of guesses. You don't know ball!\n")
             basketball_players.remove(p2_guessing_word)
             p2_round_end = True
 
     p1_score = p1_guesses + p1_wrong_word_guesses
     p2_score = p2_guesses + p2_wrong_word_guesses
 
+    time.sleep(1.5)
     print(f"\nPlayer 1's score: {p1_score}\n"
           f"Player 1's word was: {p1_guessing_word}\n"
             f"Player 2's score: {p2_score}\n"
             f"Player 2's word was: {p2_guessing_word}\n")
-            
-    if p1_score > p2_score:
-        print("\nPlayer 1 wins!")
-    elif p1_score < p2_score:
-        print("\nPlayer 2 wins!")
-    elif p1_score == p2_score:
+    
+    if (p1_wrong_word_guesses == 3 and p2_wrong_word_guesses == 3) or p1_score == p2_score:
         print("\nTie!")
+    elif p2_wrong_word_guesses == 3 or p1_score < p2_score:
+        print("\nPlayer 1 wins!")
+    elif p1_wrong_word_guesses == 3 or p1_score > p2_score:
+        print("\nPlayer 2 wins!")
 
 word_game()
+
