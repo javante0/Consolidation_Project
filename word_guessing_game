@@ -7,7 +7,10 @@ import time
 #word bank
 basketball_players = ["Stephen Curry", "Lebron James", "Kawhi Leonard", 
                       "David Robinson", "Kobe Bryant", "Allen Iverson", 
-                      "Nikola Jokic", "Jalen Brunson", "Anthony Davis"]
+                      "Nikola Jokic", "Jalen Brunson", "Anthony Davis",
+                      "Michael Jordan", "Larry Bird", "Kevin Durant",
+                      "Hakeem Olajuwan", "Jayson Tatum", "Luka Doncic",
+                      "Anthony Edwards", "Devin Booker", "Giannis Antetokounmpo"]
 
 p1_correct_letter_guess_list = []
 p1_incorrect_letter_guess_list =[]
