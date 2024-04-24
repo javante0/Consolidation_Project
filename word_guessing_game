@@ -33,27 +33,35 @@ def word_game():
         #If letter_guess is in the word
         elif letter_guess.casefold() in guessing_word.casefold():
             p1_guesses += 1
+            correct_letter_guess_list.append(letter_guess)
             print(f"The letter {letter_guess} is in the word "
-                  f"{guessing_word.casefold().count(letter_guess.casefold())} times\n")
+                  f"{guessing_word.casefold().count(letter_guess.casefold())} times") 
         #If letter_guess is NOT in the word
         elif letter_guess.casefold() not in guessing_word.casefold():
             p1_guesses += 1
-            print(f"The letter {letter_guess} is not in the word.\n")
+            incorrect_letter_guess_list.append(letter_guess)
+            print(f"The letter {letter_guess} is not in the word.")
+        print(f"The letters {correct_letter_guess_list} are in the word.")
+        print(f"The letters {incorrect_letter_guess_list} are not in the word.")
         
         #Word guesses
         word_guess_confirmation = input("Would you like to guess the word? Enter (y/n): ")
+        #if "n" or other entry, back to beginning of while loop
         if word_guess_confirmation == "y":
             word_guess = input("Guess the word: ")
+            #if word correct, removes guessing word from word bank
             if word_guess == f"{guessing_word}":
                 print(f"Good job! The word is {guessing_word}")
+                basketball_players.remove(guessing_word)
                 word_guess_correct = True
+            #if incorrect, back to beginning of loop
             elif word_guess != f"{guessing_word}":
                 p1_wrong_word_guesses += 1
                 print(f"That is not correct. You have {3-p1_wrong_word_guesses} guesses left.")
+        #if word guesses reaches 3, removes guessing word from word bank, on to next loop
         if p1_wrong_word_guesses == 3:
             print(f"You ran out of guesses. Game Over!")
+            basketball_players.remove(guessing_word)
             continue
-
-
 
 word_game()
