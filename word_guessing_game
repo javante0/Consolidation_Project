@@ -32,6 +32,7 @@ def word_game():
     p1_wrong_word_guesses = 0
     p2_wrong_word_guesses = 0
     #Game intro
+    #Start of P1's turn
     p1_guessing_word = random.choice(basketball_players)
     print("Welcome to the Word Guessing Game.\n"
           "Player 1 will start.\n"
