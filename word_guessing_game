@@ -38,7 +38,7 @@ def word_game():
           "Player 1 will start.\n"
           f"The length of the word is {len(p1_guessing_word)-1} letters.\n"
           "The category is Basketball Players.\n")
-    print(p1_guessing_word)
+    #print(p1_guessing_word)
     p1_round_end = False
     while not p1_round_end:
         #User input for a letter
@@ -89,7 +89,7 @@ def word_game():
     print("Player 2 is next.\n"
           f"The length of the word is {len(p2_guessing_word)-1} letters.\n"
           "The category is Basketball Players.\n")
-    print(p2_guessing_word)
+    #print(p2_guessing_word)
     p2_round_end = False
     while not p2_round_end:
         #User input for a letter
