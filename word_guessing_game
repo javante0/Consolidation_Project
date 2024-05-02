@@ -52,7 +52,7 @@ def word_game():
             p1_guesses += 1
             p1_correct_letter_guess_list.append(letter_guess)
             print(f"\nThe letter {letter_guess} is in the word "
-                  f"{p1_guessing_word.casefold().count(letter_guess.casefold())} times") 
+                  f"{p1_guessing_word.casefold().count(letter_guess.casefold())} times.") 
         #If letter_guess is NOT in the word
         elif letter_guess.casefold() not in p1_guessing_word.casefold():
             p1_guesses += 1
@@ -103,7 +103,7 @@ def word_game():
             p2_guesses += 1
             p2_correct_letter_guess_list.append(letter_guess)
             print(f"\nThe letter {letter_guess} is in the word "
-                  f"{p2_guessing_word.casefold().count(letter_guess.casefold())} times") 
+                  f"{p2_guessing_word.casefold().count(letter_guess.casefold())} times.") 
         #If letter_guess is NOT in the word
         elif letter_guess.casefold() not in p2_guessing_word.casefold():
             p2_guesses += 1
