@@ -1,6 +1,10 @@
 ##########
 How to play:
-This word guessing game is made for 2 players. Player 1 will go first. Player 1 is assigned a random term from the word bank. Player 1 will guess a letter. They will be told if that letter is in the word and how many times it is in the word. After guessing a letter, the user will have the option to guess the word. If the player replies "n", they will go back to guessing a letter. If the player replies with "y", they will be prompted to guess the word. If they are incorrect, they will go back to guessing a letter. If they are correct, player 1's round will end. Player 2 will go through the same process until they guess the word correctly or incorrectly guess a word 3 times.
+This word guessing game is made for 2 players. Player 1 will go first. Player 1 is assigned a random term from the word bank. Player 1 will guess a letter. They will be told if that letter is in the word and how many times it is in the word. 
+
+After guessing a letter, Player 1 will have the option to guess the word. If Player 1 replies "n", they will go back to guessing a letter. If the player replies with "y", they will be prompted to guess the word. If they are incorrect, they will go back to guessing a letter. If they are correct, player 1's round will end. If they incorrectly guesses the word 3 times, Player 1's round will end.
+ 
+Player 2 will go through the same process after Player 1's round is over.
 
 ##########
 Rules:
