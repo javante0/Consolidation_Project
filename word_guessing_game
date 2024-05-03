@@ -10,13 +10,16 @@ basketball_players = ["Stephen Curry", "Lebron James", "Kawhi Leonard",
                       "Nikola Jokic", "Jalen Brunson", "Anthony Davis",
                       "Michael Jordan", "Larry Bird", "Kevin Durant",
                       "Hakeem Olajuwan", "Jayson Tatum", "Luka Doncic",
-                      "Anthony Edwards", "Devin Booker", "Giannis Antetokounmpo"]
+                      "Anthony Edwards", "Devin Booker", "Magic Johnson"]
 
 p1_correct_letter_guess_list = []
 p1_incorrect_letter_guess_list =[]
 
 p2_correct_letter_guess_list = []
 p2_incorrect_letter_guess_list =[]
+
+p1_scores_list = []
+p2_scores_list = []
 
 #Clears guesses' lists
 p1_correct_letter_guess_list.clear()
@@ -137,6 +140,19 @@ def word_game():
     time.sleep(1.5)
     p1_score = p1_guesses + p1_wrong_word_guesses
     p2_score = p2_guesses + p2_wrong_word_guesses
+
+    #Writes results to a list
+    p1_scores_list.append(p1_guesses)
+    p1_scores_list.append(p1_wrong_word_guesses)
+    p1_scores_list.append(p1_score)
+
+    p2_scores_list.append(p2_guesses)
+    p2_scores_list.append(p2_wrong_word_guesses)
+    p2_scores_list.append(p2_score)
+
+    print(f"Player 1: {p1_scores_list}")
+    print(f"Player 2: {p2_scores_list}")
+
     #Game End score screen
     print(f"\nPlayer 1's score: {p1_score}\n"
           f"Player 1's word was: {p1_guessing_word}\n"
