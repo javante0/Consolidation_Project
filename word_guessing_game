@@ -166,4 +166,5 @@ def word_game():
     elif p1_wrong_word_guesses == 3 or p1_score > p2_score:
         print("Player 2 wins!")
 
+    #End of Game for Both Players 1 & 2 
 word_game()
