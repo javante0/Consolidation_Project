@@ -21,3 +21,4 @@ If neither player is able to guess the word after 3 tries, neither player wins.
 If Player 2 does not guess the word OR Player 1's score is less than Player 2's score, Player 1 wins.
 If Player 1 does not guess the word OR Player 2's score is less than Player 1's score, Player 2 wins.
 
+Thank you to Viet Nguyen for your contributions to this project.
